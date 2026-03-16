@@ -55,7 +55,7 @@
         </div>
 
         @if($activeBatch)
-            <x-ui.progress-bar 
+            <x-ui.progres-bar 
                 label="{{ $enrolledCount }} / {{ $maxSlots }} slot" 
                 :value="(100 - $remainingPercent)" 
                 :color="$remainingPercent <= 20 ? 'emerald' : 'primary'"
