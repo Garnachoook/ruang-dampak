@@ -7,9 +7,6 @@
             <x-ui.background-pattern />
             
             <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-                <x-ui.badge type="primary" class="mb-6">
-                    Mengenal Ruang Dampak
-                </x-ui.badge>
                 
                 <h1 class="font-display font-black text-4xl md:text-6xl text-primary-950 mb-6 tracking-tight leading-[1.1]">
                     Menjembatani Kampus <br class="hidden md:block" />

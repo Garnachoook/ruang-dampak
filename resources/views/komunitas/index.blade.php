@@ -1,29 +1,39 @@
-<x-layout.app navTheme="dark">
-    <x-slot:title>Komunitas - Ruang Dampak</x-slot:title>
+<x-layout.app navTheme="light">
+    <x-slot:title>Segera Hadir - Ruang Dampak</x-slot:title>
 
-    <div class="bg-neutral-50 min-h-screen">
-        {{-- Hero Section --}}
-        <section class="relative bg-white pt-32 pb-20 overflow-hidden border-b border-neutral-200">
-            <x-ui.background-pattern />
-            
-            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-                <h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl text-primary-950 mb-6 tracking-tight">
-                    Bertumbuh Bersama, <br/>
-                    <span class="text-primary-600">Komunitas Kami.</span>
-                </h1>
-                <p class="text-lg text-neutral-500 font-body max-w-2xl mx-auto leading-relaxed">
-                    Forum diskusi eksklusif untuk bertanya, berjejaring, dan berkolaborasi membangun proyek nyata bersama praktisi industri.
-                </p>
+    <div class="relative bg-neutral-50 min-h-screen flex items-center justify-center p-4 overflow-hidden">
+        {{-- Background Glow Ringkas --}}
+        <div class="absolute w-[500px] h-[500px] bg-accent-teal/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="w-full max-w-lg relative z-10 text-center">
+            <x-ui.card class="bg-white/80 backdrop-blur-lg border-neutral-200 shadow-2xl p-10 rounded-[2rem]">
                 
-                <div class="inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-2.5 backdrop-blur-sm">
-                    <span class="relative flex h-3 w-3">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-950 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-950"></span>
-                    </span>
-                    <span class="text-sm text-primary-950 font-display font-bold uppercase tracking-widest">2.400+ Talenta Online</span>
+                {{-- Icon Minimalis --}}
+                <div class="w-20 h-20 mx-auto bg-primary-950 text-accent-teal rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                    <i class="fa-solid fa-comments text-3xl"></i> {{-- Ganti icon sesuai kebutuhan --}}
                 </div>
-            </div>
-        </section>
 
+                <x-ui.badge variant="subtle" type="info" class="mb-4">Segera Hadir</x-ui.badge>
+
+                <h1 class="text-3xl font-display font-black text-primary-950 mb-3 tracking-tight">
+                    Sedang Dibangun.
+                </h1>
+
+                <p class="text-neutral-500 font-body leading-relaxed mb-8">
+                    Kami sedang menyiapkan fitur ini agar pengalamanmu di Ruang Dampak menjadi lebih maksimal. Harap nantikan pembaruannya!
+                </p>
+
+                {{-- Tombol Aksi --}}
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <x-ui.button variant="outline" href="/" wire:navigate class="justify-center w-full sm:w-auto">
+                        Kembali
+                    </x-ui.button>
+                    <x-ui.button variant="primary" href="{{ route('program.index') }}" wire:navigate class="justify-center w-full sm:w-auto">
+                        Eksplorasi Program
+                    </x-ui.button>
+                </div>
+
+            </x-ui.card>
+        </div>
     </div>
 </x-layout.app>
