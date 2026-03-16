@@ -1,0 +1,46 @@
+<aside class="w-64 flex-shrink-0 hidden lg:flex flex-col bg-primary-950 border-r border-primary-900 min-h-screen">
+    <div class="h-16 flex items-center px-6 border-b border-primary-900">
+        <a href="/" class="text-xl font-display font-bold text-white tracking-wide">
+            Ruang<span class="text-accent-teal">Dampak</span>
+        </a>
+    </div>
+
+    <div class="flex-1 overflow-y-auto py-6 px-4 space-y-1">
+        @php
+            $navItems = [
+                ['label' => 'Dashboard', 'icon' => 'home', 'route' => '#'],
+                ['label' => 'Lowongan Saya', 'icon' => 'briefcase', 'route' => '#'],
+                ['label' => 'Profil Perusahaan', 'icon' => 'office-building', 'route' => '#'],
+            ];
+            
+            $activeRoute = 'Dashboard';
+        @endphp
+
+        @foreach($navItems as $item)
+            @php
+                $isActive = $activeRoute === $item['label'];
+                $classes = $isActive 
+                    ? 'bg-primary-800 text-white' 
+                    : 'text-primary-300 hover:bg-primary-900/50 hover:text-white';
+            @endphp
+            <a href="{{ $item['route'] }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-body font-medium transition-colors {{ $classes }}">
+                <div class="w-5 h-5 opacity-70">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                {{ $item['label'] }}
+            </a>
+        @endforeach
+    </div>
+
+    <div class="p-4 border-t border-primary-900">
+        <div class="flex items-center gap-3 px-2 py-2">
+            <x-ui.avatar name="{{ auth()->user()->name ?? 'Mitra' }}" size="sm" />
+            <div class="flex-1 min-w-0">
+                <p class="text-sm font-display font-medium text-white truncate">{{ auth()->user()->name ?? 'Mitra Company' }}</p>
+                <p class="text-xs text-primary-400 truncate">Mitra</p>
+            </div>
+        </div>
+    </div>
+</aside>
