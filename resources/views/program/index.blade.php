@@ -36,17 +36,17 @@
                     <div class="flex items-center gap-4 shrink-0 px-2 xl:px-0">
                         <span class="text-neutral-800 font-display font-bold uppercase tracking-wider text-[12px]">Tipe:</span>
                         <div class="flex gap-1 bg-neutral-100 p-1 rounded-full">
-                            <a href="{{ request()->fullUrlWithQuery(['tipe' => null]) }}" 
+                            <a href="#" 
                                wire:navigate.hover
                                class="px-4 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 {{ !request('tipe') ? 'bg-white text-primary-950 shadow-sm' : 'text-neutral-500 hover:text-neutral-700' }}">
                                Semua
                             </a>
-                            <a href="{{ request()->fullUrlWithQuery(['tipe' => 'bootcamp']) }}" 
+                            <a href="#" 
                                wire:navigate.hover
                                class="px-4 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 {{ request('tipe') === 'bootcamp' ? 'bg-white text-primary-950 shadow-sm' : 'text-neutral-500 hover:text-neutral-700' }}">
                                Bootcamp
                             </a>
-                            <a href="{{ request()->fullUrlWithQuery(['tipe' => 'course']) }}" 
+                            <a href="#" 
                                wire:navigate.hover
                                class="px-4 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 {{ request('tipe') === 'course' ? 'bg-white text-primary-950 shadow-sm' : 'text-neutral-500 hover:text-neutral-700' }}">
                                E-Course
@@ -56,13 +56,13 @@
 
                     {{-- Tabs Kategori --}}
                     <div class="flex flex-wrap gap-2 md:gap-3">
-                        <a href="{{ route('program.index') }}" 
+                        <a href="#" 
                            wire:navigate.hover
                            class="px-5 py-2.5 rounded-full text-sm font-display font-bold transition-all duration-300 {{ !request('kategori') ? 'bg-primary-950 text-white shadow-md' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200' }}">
                            Semua Program
                         </a>
                         @foreach($categories as $cat)
-                        <a href="{{ route('program.index', ['kategori' => $cat]) }}" 
+                        <a href="#" 
                            wire:navigate.hover
                            class="px-5 py-2.5 rounded-full text-sm font-display font-bold transition-all duration-300 {{ request('kategori') === $cat ? 'bg-primary-950 text-white shadow-md' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200' }}">
                            {{ ucwords(str_replace('-', ' ', $cat)) }}
