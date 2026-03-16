@@ -169,7 +169,7 @@
                                 </div>
                             </div>
 
-                            <x-ui.button variant="outline" size="sm" class="w-full justify-between group-hover:bg-primary-950 group-hover:text-white group-hover:border-primary-950 transition-all duration-300 border-neutral-200 text-primary-950" wire:navigate.hover href="{{ route('learning-path.show', $path->slug) }}">
+                            <x-ui.button variant="outline" size="sm" class="w-full justify-between group-hover:bg-primary-950 group-hover:text-white group-hover:border-primary-950 transition-all duration-300 border-neutral-200 text-primary-950" wire:navigate.hover href="#">
                                 <span>Lihat Roadmap</span>
                                 <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                             </x-ui.button>
