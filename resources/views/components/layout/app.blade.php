@@ -20,7 +20,7 @@
         @livewireStyles
     </head>
     <body class="font-body text-neutral-900 antialiased bg-neutral-50 flex flex-col min-h-screen">
-        
+    
         <!-- Navbar components -->
         <x-layout.navbar />
 

@@ -19,14 +19,14 @@
             </div>
         </section>
 
-{{-- 2. Our Story / Narrative --}}
+        {{-- 2. Our Story / Narrative --}}
         <section class="max-w-7xl mx-auto px-4 py-20 md:py-32">
             <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
                 
                 {{-- Image Column --}}
                 <div class="lg:w-1/2 relative group">
                     <div class="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden bg-neutral-100 relative shadow-xl shadow-primary-900/5 ring-1 ring-neutral-200/50 z-10">
-                        <img src="{{ asset('images/tentang-kami.png') }}" alt="Cerita Ruang Dampak" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="{{ asset('images/ilustrate-tim.png') }}" alt="Cerita Ruang Dampak" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         
                         {{-- Overlay gradient halus saat hover --}}
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

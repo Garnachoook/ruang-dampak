@@ -8,7 +8,7 @@
             
             <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
                 <h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl text-primary-950 mb-6 tracking-tight">
-                    Buka Peluang <br/><span class="text-primary-400">Karir Impianmu.</span>
+                    Buka Peluang <br/><span class="text-primary-600">Karir Impianmu.</span>
                 </h1>
                 <p class="text-lg text-primary-900 font-body max-w-2xl mx-auto mb-8 leading-relaxed">
                     Eksplorasi {{ $jobs->total() }} posisi terbuka dari perusahaan teknologi terkemuka yang siap merekrut talenta Ruang Dampak.

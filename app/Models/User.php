@@ -119,12 +119,13 @@ class User extends Authenticatable
 
     public function currentStreak(): int
     {
+        // Ambil tanggal unik langsung dari DB
         $dates = $this->activityLogs()
-            ->select('logged_at')
+            ->selectRaw('DATE(logged_at) as day')
             ->distinct()
-            ->orderByDesc('logged_at')
-            ->pluck('logged_at')
-            ->map(fn ($d) => \Carbon\Carbon::parse($d)->startOfDay());
+            ->orderByDesc('day')
+            ->pluck('day')
+            ->map(fn($d) => \Carbon\Carbon::parse($d)->startOfDay());
 
         if ($dates->isEmpty()) {
             return 0;
@@ -133,7 +134,7 @@ class User extends Authenticatable
         $streak = 0;
         $expected = now()->startOfDay();
 
-        // If today has no activity, start from yesterday
+        // Kalau hari ini tidak ada log, mulai dari kemarin
         if (!$dates->first()->equalTo($expected)) {
             $expected = $expected->subDay();
         }

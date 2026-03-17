@@ -90,9 +90,9 @@ class DatabaseSeeder extends Seeder
 
         // ── Programs ──
         $programData = [
-            ['title' => 'Bootcamp Full-Stack Laravel', 'type' => 'bootcamp', 'path' => 0, 'price' => 1500000, 'thumb' => '/images/programs/fullstack-bootcamp.png'],
-            ['title' => 'Bootcamp Front-End React', 'type' => 'bootcamp', 'path' => 0, 'price' => 1200000, 'thumb' => '/images/programs/frontend-bootcamp.png'],
-            ['title' => 'Bootcamp UI/UX Fundamentals', 'type' => 'bootcamp', 'path' => 1, 'price' => 500000, 'thumb' => '/images/programs/uiux-bootcamp.png'],
+            ['title' => 'Bootcamp Full-Stack Laravel', 'type' => 'bootcamp', 'path' => 0, 'price' => 1500000, 'thumb' => '/images/programs/fullstack-bootcamp.webp'],
+            ['title' => 'Bootcamp Front-End React', 'type' => 'bootcamp', 'path' => 0, 'price' => 1200000, 'thumb' => '/images/programs/frontend-bootcamp.webp'],
+            ['title' => 'Bootcamp UI/UX Fundamentals', 'type' => 'bootcamp', 'path' => 1, 'price' => 500000, 'thumb' => '/images/programs/uiux-bootcamp.webp'],
         ];
 
         $programs = collect();

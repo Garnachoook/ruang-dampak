@@ -23,7 +23,7 @@ use App\Helpers\DummyData;
 | Publik Routes (Bisa diakses tanpa login)
 |--------------------------------------------------------------------------
 */
-Route::get('/', [LandingController::class, 'index'])->name('welcome');
+Route::get('/welcome', [LandingController::class, 'index'])->name('welcome');
 
 // Program
 Route::get('/program', [ProgramController::class, 'index'])->name('program.index');

@@ -10,7 +10,12 @@ class LearningPathController extends Controller
     public function index()
     {
         $paths = LearningPath::where('is_published', true)
-            ->with(['programs' => fn($q) => $q->published()->with('batches')])
+            ->with([
+                'programs' => fn($q) => $q->published()
+                    ->with([
+                        'batches' => fn($qb) => $qb->orderBy('start_date')
+                    ])
+            ])
             ->orderBy('order_index')
             ->get();
 
@@ -24,8 +29,8 @@ class LearningPathController extends Controller
             ->with([
                 'programs' => fn($q) => $q->published()
                     ->with([
-                        'batches' => fn($q) => $q->orderBy('start_date'),
-                        'batches.enrollments',
+                        'batches' => fn($qb) => $qb->orderBy('start_date')
+                            ->with('enrollments') // eager load enrollments
                     ])
                     ->orderBy('order_index'),
             ])

@@ -16,68 +16,52 @@
                 <p class="text-lg md:text-xl text-neutral-500 font-body max-w-2xl mx-auto mb-8 leading-relaxed">
                     Akselerasi karirmu melalui kurikulum berbasis industri dan bimbingan langsung dari mentor praktisi berpengalaman.
                 </p>
+            </div>
+        </section>
+
+        {{-- SMART SEARCH SECTION --}}
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10">
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-xl shadow-slate-200/40 relative group">
                 
-                {{-- Status Meta --}}
-                <div class="inline-flex items-center gap-2 bg-neutral-100/80 border border-neutral-200 text-neutral-600 px-5 py-2.5 rounded-full text-sm font-display font-semibold shadow-sm backdrop-blur-sm">
-                    <svg class="w-4 h-4 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    Menampilkan {{ $programs->total() }} program unggulan
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2.5 mb-5">
+                        <div class="p-2 bg-primary-600 rounded-lg text-white shadow-sm">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-slate-900 text-lg leading-none">Temukan Program Dengan <span class="text-primary-600">Jarvis</span></h3>
+                            <p class="text-xs text-slate-500 mt-1 font-medium italic">Cari berdasarkan minat, profesi, atau keahlian</p>
+                        </div>
+                    </div>
+
+                    <form action="#" class="relative">
+                        <input type="text" 
+                            placeholder="Karena saya suka desain berikan saran course yang cocok..." 
+                            class="w-full bg-slate-50 border-slate-200 rounded-xl py-4 pl-6 pr-16 text-slate-700 font-medium placeholder:text-slate-400 focus:ring-4 focus:ring-primary-100 focus:border-primary-600 transition-all outline-none">
+                        
+                        <button type="submit" class="absolute right-3 top-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-700 text-white px-6 rounded-lg transition-colors shadow-sm flex items-center justify-center group/btn">
+                            <svg class="w-5 h-5 transition-transform group-hover/btn:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </form>
+
+                    {{-- Suggested Keywords --}}
+                    <div class="mt-5 flex flex-wrap items-center gap-3">
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Saran Populer:</span>
+                        @foreach(['Project Fullstack', 'Design System', 'Data Analytics'] as $suggestion)
+                        <button class="text-xs font-bold text-slate-600 bg-white border border-slate-200 px-4 py-1.5 rounded-full hover:border-primary-600 hover:text-primary-600 hover:bg-primary-50 transition-all">
+                            {{ $suggestion }}
+                        </button>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
 
-        {{-- Filter & Kategori Controls --}}
-        <div class="max-w-7xl mx-auto px-4 relative z-20 -mt-12">
-            <x-ui.card class="p-4 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white/95 backdrop-blur-xl border-neutral-200/80 rounded-3xl">
-                
-                <div class="flex flex-col xl:items-center justify-between gap-6">
-                    {{-- Filter Inline Tipe --}}
-                    <div class="flex items-center gap-4 shrink-0 px-2 xl:px-0">
-                        <span class="text-neutral-800 font-display font-bold uppercase tracking-wider text-[12px]">Tipe:</span>
-                        <div class="flex gap-1 bg-neutral-100 p-1 rounded-full">
-                            <a href="#" 
-                               wire:navigate.hover
-                               class="px-4 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 {{ !request('tipe') ? 'bg-white text-primary-950 shadow-sm' : 'text-neutral-500 hover:text-neutral-700' }}">
-                               Semua
-                            </a>
-                            <a href="#" 
-                               wire:navigate.hover
-                               class="px-4 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 {{ request('tipe') === 'bootcamp' ? 'bg-white text-primary-950 shadow-sm' : 'text-neutral-500 hover:text-neutral-700' }}">
-                               Bootcamp
-                            </a>
-                            <a href="#" 
-                               wire:navigate.hover
-                               class="px-4 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 {{ request('tipe') === 'course' ? 'bg-white text-primary-950 shadow-sm' : 'text-neutral-500 hover:text-neutral-700' }}">
-                               E-Course
-                            </a>
-                        </div>
-                    </div>
 
-                    {{-- Tabs Kategori --}}
-                    <div class="flex flex-wrap gap-2 md:gap-3">
-                        <a href="#" 
-                           wire:navigate.hover
-                           class="px-5 py-2.5 rounded-full text-sm font-display font-bold transition-all duration-300 {{ !request('kategori') ? 'bg-primary-950 text-white shadow-md' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200' }}">
-                           Semua Program
-                        </a>
-                        @foreach($categories as $cat)
-                        <a href="#" 
-                           wire:navigate.hover
-                           class="px-5 py-2.5 rounded-full text-sm font-display font-bold transition-all duration-300 {{ request('kategori') === $cat ? 'bg-primary-950 text-white shadow-md' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200' }}">
-                           {{ ucwords(str_replace('-', ' ', $cat)) }}
-                        </a>
-                        @endforeach
-                    </div>
-
-                    {{-- Separator for Mobile --}}
-                    <div class="h-px w-full bg-neutral-100 xl:hidden"></div>
-
-                    
-                </div>
-                
-            </x-ui.card>
-        </div>
 
         {{-- Grid Programs --}}
         <section class="max-w-7xl mx-auto px-4 pt-16">
@@ -98,13 +82,6 @@
                     </div>
                 @endforelse
             </div>
-
-            {{-- Pagination --}}
-            @if($programs->hasPages())
-                <div class="mt-16 flex justify-center">
-                    {{ $programs->links() }}
-                </div>
-            @endif
         </section>
     </div>
 </x-layout.app>

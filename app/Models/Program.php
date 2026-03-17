@@ -46,7 +46,7 @@ class Program extends Model
 
     protected static function booted(): void
     {
-        static::creating(function (Program $model) {
+        static::saving(function (Program $model) {
             if (empty($model->slug)) {
                 $model->slug = Str::slug($model->title);
             }
